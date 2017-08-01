@@ -38,6 +38,14 @@ export default function errorHandler (error) {
       default:
         feathersError = new errors.GeneralError(error);
     }
+
+    //expose sql error data
+    feathersError.sql = {
+      state: sqlState, // '21'
+      code: error.code, // 'ER_DUP_ENTRY'
+      errno: error.errno, //1062
+      message: error.message
+    }
   }
 
   // NOTE (EK): Error codes taken from
