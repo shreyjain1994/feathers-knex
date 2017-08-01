@@ -30,6 +30,5 @@ node_modules
 # IDE specific files
 .idea
 
-lib/
 db.sqlite
 data.db
