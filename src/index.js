@@ -215,7 +215,7 @@ class Service {
     return this._create(data, params);
   }
 
-  patch (id, raw, params) {
+  _patch (id, raw, params) {
     const query = filter(params.query || {}).query;
     const data = Object.assign({}, raw);
     const mapIds = page => page.data.map(current => current[this.id]);
@@ -262,6 +262,10 @@ class Service {
         });
       });
     }).catch(errorHandler);
+  }
+
+  patch(...args){
+    return this._patch(...args);
   }
 
   update (id, data, params) {
