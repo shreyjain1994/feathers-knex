@@ -27,6 +27,9 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
+# IDE specific files
+.idea
+
 lib/
 db.sqlite
 data.db
